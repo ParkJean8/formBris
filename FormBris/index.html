@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <title>Formulario con Matrices</title>
+</head>
+<body>
+    <form>
+        <label for="country">País:</label>
+        <select id="country" onchange="updateStates()">
+            <option value="">Selecciona un país</option>
+            <option value="mexico">México</option>
+            <option value="usa">Estados Unidos</option>
+        </select>
+
+        <br>
+
+        <label for="state">Estado:</label>
+        <select id="state" onchange="updateCities()">
+            <option value="">Selecciona un estado</option>
+        </select>
+
+        <br>
+
+        <label for="city">Municipio:</label>
+        <select id="city" onchange="updateLocalities()">
+            <option value="">Selecciona un municipio</option>
+        </select>
+
+        <br>
+
+        <label for="locality">Localidad:</label>
+        <select id="locality">
+            <option value="">Selecciona una localidad</option>
+        </select>
+
+        <br>
+ 
+        <button type="button" onclick="showSelection()">Mostrar Selección</button>
+    </form>
+
+    <script src="./js/scrip.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('js/sw.js')
+              .then(registration => {
+                console.log('Service Worker registrado:', registration);
+              })
+              .catch(error => {
+                console.log('Error al registrar el Service Worker:', error);
+              });
+          });
+        }
+      </script>
+</body>
+</html>
